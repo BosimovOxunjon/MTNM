@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: $mainblack;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+.container {
+  padding: 0 80px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: $mainwhite;
+  background-color: $mainblue;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    text-align: center;
+  }
+  .footer {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 15px 0;
+  }
+}
+// $breakpoint(sm:576px, md:768px, lg:992px, xl:1140px,);
+
+// @each $i in (success, danger, warning) {
+//   .#{$i} {
+//     color: $i;
+//   }
+// }
+
+// $breakpoints:(
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1140px,
+//   xxl: 1440px
+// );
+
+// @each $mq in $breakpoints (sm, md, lg, xl, xxl) {
+//   @media screen and (min-width: map-get($breakpoints, $mq)) {
+//     .col {
+//       color: $mq;
+//     }
+//   }
+//   .mendirmanusha {
+//     color: $mq;
+//   }
+// }
+
+// @for $i from 1 through 12 {
+//   .col-#{$i} {
+//     flex-basis: 100% / 12 * $i;
+//   }
+// }
+
+// .qanaqadir {
+//   color: map-get($theme-colors, success );
+// }
+
+// $name: "5";
+
+// @if $name > 6 {
+//   .Sanjarbek {
+//     height: 170px;
+//     width: 80px;
+//     color: lime;
+//   }
+// }

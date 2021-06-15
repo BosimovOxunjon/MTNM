@@ -1,0 +1,31 @@
+@mixin respond($size) {
+  @if $size == mobile {
+    @media screen and (min-width: 375px) and (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $size == tab-land {
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $size == tab-por {
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $size == lg {
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $size == laptop {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}

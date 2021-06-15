@@ -1,0 +1,172 @@
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 991px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
+@for $i from 0 through 5 {
+  .m-#{$i} {
+    margin: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .ms-#{$i} {
+    margin-left: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .me-#{$i} {
+    margin-right: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mt-#{$i} {
+    margin-top: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mb-#{$i} {
+    margin-bottom: $i * 5px;
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .ms-#{$mq}-#{$i} {
+        margin-left: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .me-#{$mq}-#{$i} {
+        margin-right: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .mt-#{$mq}-#{$i} {
+        margin-top: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .mb-#{$mq}-#{$i} {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.mx-auto  {
+  margin: 0 auto;
+}
+
+// @for $var from start to end {
+  
+// }
+@for $i from 0 through 5 {
+  .ps-#{$i} {
+    padding-left: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pe-#{$i} {
+    padding-right: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pt-#{$i} {
+    padding-top: $i * 5px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pb-#{$i} {
+    padding-bottom: $i * 5px;
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width: map-get($breakpoints , $mq )) {
+    @for $i from 1 through 5 {
+      .ps-#{$mq}-#{$i} {
+        padding-left: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width: map-get($breakpoints , $mq )) {
+    @for $i from 1 through 5 {
+      .pe-#{$mq}-#{$i} {
+        padding-right: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width: map-get($breakpoints , $mq )) {
+    @for $i from 1 through 5 {
+      .pt-#{$mq}-#{$i} {
+        padding-top: $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width: map-get($breakpoints , $mq )) {
+    @for $i from 1 through 5 {
+      .pb-#{$mq}-#{$i} {
+        padding-bottom: $i * 5px;
+      }
+    }
+  }
+}
+
+$theme-colors: (
+  "success": lime,
+  "danger": red,
+  "warning": yellow,
+);
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex-basis: 100% / 12 * $i;
+    flex-grow: 1;
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width: map-get($breakpoints , $mq )) {
+    @for $i from 1 through 12 {
+      .col-#{$mq}-#{$i} {
+        flex-basis: 100% / 12 * $i;
+        flex-grow: 1;
+      }
+    }
+  }
+}

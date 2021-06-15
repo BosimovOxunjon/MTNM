@@ -1,0 +1,15 @@
+@mixin flexStyle($ai, $jc) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin box($h, $w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin padding($y, $x) {
+  padding: $y $x;
+}
+
