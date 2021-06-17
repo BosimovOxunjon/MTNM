@@ -1,0 +1,21 @@
+.footer {
+  min-height: 100px;
+  .info {
+    text-decoration: none;
+    margin-top: 90px;
+    color: grey;
+    font-family: sans-serif;
+  }
+  .title {
+    color: rgb(255, 187, 0);
+    font-family: sans-serif;
+  }
+  .list {
+    list-style: none;
+    padding-left: 0;
+    .footer__link {
+      text-decoration: none;
+      color: $mainwhite;
+    }
+  }
+}

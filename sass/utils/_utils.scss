@@ -80,6 +80,39 @@ $breakpoints: (
   margin: 0 auto;
 }
 
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .mx-#{$mq}-#{$i} {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.my-auto {
+  margin: auto 0;
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    @for $i from 0 through 5 {
+      .my-#{$mq}-#{$i} {
+        margin: auto $i * 5px;
+      }
+    }
+  }
+}
+
+@each $mq in (sm, md, lg, xl, xxl) {
+  @media screen and (min-width:map-get($breakpoints, $mq )) {
+    // @for $i from 0 through 5 {
+      .my-#{$mq}-auto {
+        margin: auto 0;
+      }
+    // }
+  }
+}
 // @for $var from start to end {
   
 // }
