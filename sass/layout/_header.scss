@@ -49,6 +49,11 @@
       margin: 6px;
       transform-origin: 4px;
       transition: 1s;
+
+      @include respond(tab-land) {
+        display: none;
+      }
+
     }
   }
   .header__menu {

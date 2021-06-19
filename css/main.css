@@ -129,6 +129,11 @@ section {
   transform-origin: 4px;
   transition: 1s;
 }
+@media screen and (min-width: 576px) {
+  .header__btn label[for=checkbox] .header__btn-item {
+    display: none;
+  }
+}
 .header__btn .header__menu {
   display: none;
   opacity: 0;
@@ -163,12 +168,19 @@ section {
 }
 .hero .row .social__links {
   display: flex;
+  align-items: flex-start;
   position: relative;
   flex-direction: column;
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .hero .row .social__links {
+    display: flex;
+  }
 }
 .hero .row .social__links .title {
-  text-transform: none;
-  transform: rotate(90deg);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -176,12 +188,6 @@ section {
 .hero .row .social__links img {
   margin-top: 10px;
   width: 25px;
-}
-.hero .row .title {
-  text-transform: capitalize;
-  color: white;
-  margin-top: 30px;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .equipment {

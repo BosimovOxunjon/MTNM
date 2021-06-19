@@ -4,6 +4,8 @@
 
 @import "utils/mixins";
 
+@import "utils/media";
+
 @import "layout/header";
 
 @import "layout/hero";
@@ -15,5 +17,3 @@
 @import "layout/footer";
 
 @import "utils/utils";
-
-@import "utils/media";
