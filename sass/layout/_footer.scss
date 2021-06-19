@@ -1,12 +1,18 @@
 .footer {
   min-height: 100px;
+  .footer__brand {
+    text-decoration: none;
+    color: $mainwhite;
+    font-size: 32px;
+    font-family: none;
+  }
   .info {
     text-decoration: none;
     margin-top: 90px;
     color: grey;
     font-family: sans-serif;
   }
-  .title {
+  .footer__title {
     color: rgb(255, 187, 0);
     font-family: sans-serif;
   }

@@ -12,7 +12,12 @@ body {
 }
 
 .container {
-  padding: 0 80px;
+  padding: 0 15px;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    padding: 0 80px;
+  }
 }
 
 .container-fluid {
@@ -37,8 +42,14 @@ body {
 
 img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  img {
+    height: 90%;
+    margin: auto;
+  }
 }
 
 a {
@@ -46,25 +57,23 @@ a {
 }
 
 section {
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 .sec__title {
-  position: relative;
   font-family: sans-serif;
 }
-.sec__title .sec__title-item {
-  position: absolute;
+.sec__title .sec__title-item:last-of-type {
   color: #ffc400;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+  margin-left: 25px;
   letter-spacing: 1.5px;
 }
-.sec__title .sec__title-item::before {
-  content: "";
-  position: absolute;
-  left: -70px;
+.sec__title .sec__title-item:first-of-type {
+  position: relative;
+  display: inline-block;
   top: 50%;
   transform: translateY(-50%);
   width: 45px;
@@ -86,41 +95,32 @@ section {
     text-align: center;
   }
 }
-@media screen and (max-width: 576px) {
-  .container {
-    padding: 0 15px;
-  }
+.header {
+  background-color: transparent;
 }
-.brand {
+.header nav {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+.header nav .brand {
   text-decoration: none;
   color: white;
   font-size: 32px;
   font-family: none;
 }
-
-.header__btn {
-  display: flex;
-  position: relative;
-}
-.header__btn .brand {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-.header__btn input[type=checkbox] {
+.header nav input[type=checkbox] {
   display: none;
 }
-.header__btn ul {
-  list-style: none;
-  padding-left: 0;
-}
-.header__btn label[for=checkbox] {
+.header nav label[for=checkbox] {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 30px;
+  top: 40px;
   cursor: pointer;
 }
-.header__btn label[for=checkbox] .header__btn-item {
+.header nav label[for=checkbox] .header__btn-item {
   top: 30px;
   width: 30px;
   height: 2px;
@@ -129,35 +129,67 @@ section {
   transform-origin: 4px;
   transition: 1s;
 }
-@media screen and (min-width: 576px) {
-  .header__btn label[for=checkbox] .header__btn-item {
+@media screen and (min-width: 768px) {
+  .header nav label[for=checkbox] .header__btn-item {
     display: none;
   }
 }
-.header__btn .header__menu {
-  display: none;
-  opacity: 0;
-  transition: 2s;
-}
-.header__btn .header__menu a {
-  text-decoration: none;
-  color: white;
-}
-.header__btn input[type=checkbox]:checked + label .header__btn-item:first-of-type {
+.header nav input[type=checkbox]:checked + label .header__btn-item:first-of-type {
   transform: rotate(45deg);
 }
-.header__btn input[type=checkbox]:checked + label .header__btn-item:nth-of-type(2) {
+.header nav input[type=checkbox]:checked + label .header__btn-item:nth-of-type(2) {
   opacity: 0;
   visibility: hidden;
 }
-.header__btn input[type=checkbox]:checked + label .header__btn-item:last-of-type {
+.header nav input[type=checkbox]:checked + label .header__btn-item:last-of-type {
   transform: rotate(-45deg);
 }
-.header__btn input[type=checkbox]:checked + label + .header__menu {
+.header nav ul {
+  display: none;
+  list-style: none;
+  transform: translateX(-200vw);
+  padding-left: 0;
+  transition: 2s;
+}
+@media screen and (min-width: 768px) {
+  .header nav ul {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+.header nav ul li {
+  margin: 10px;
+}
+.header nav .auth {
+  display: none;
+  transform: translateX(-200vw);
+  transition: 2s;
+}
+@media screen and (min-width: 768px) {
+  .header nav .auth {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+.header nav .auth span {
+  display: inline-block;
+}
+.header nav .auth span img {
+  width: auto;
+}
+.header nav a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+.header nav input[type=checkbox]:checked + label + ul {
   display: block;
-  opacity: 1;
-  margin-top: 70px;
-  margin: auto;
+  transform: translateX(0);
+}
+.header nav input[type=checkbox]:checked + label + ul + .auth {
+  display: block;
+  transform: translateX(0);
 }
 
 .hero {
@@ -167,7 +199,7 @@ section {
   padding-top: 140px;
 }
 .hero .row .social__links {
-  display: flex;
+  display: none;
   align-items: flex-start;
   position: relative;
   flex-direction: column;
@@ -178,8 +210,13 @@ section {
     display: flex;
   }
 }
-.hero .row .social__links .title {
-  text-transform: uppercase;
+@media screen and (min-width: 768px) {
+  .hero .row .social__links {
+    display: flex;
+  }
+}
+.hero .row .social__links .social__title {
+  text-transform: none;
   writing-mode: vertical-rl;
   color: white;
   font-size: 1rem;
@@ -189,19 +226,68 @@ section {
   margin-top: 10px;
   width: 25px;
 }
+.hero .row .hero__title {
+  text-transform: capitalize;
+  font-size: 3rem;
+  margin-top: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
+.hero .row .hero__slider {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .hero .row .hero__slider {
+    display: flex;
+  }
+}
+.hero .row .hero__slider p {
+  margin: 20px 15px;
+}
+.hero .row .hero__slider span:first-of-type {
+  background-color: #fff;
+}
+.hero .row .hero__slider span {
+  display: block;
+  height: 45px;
+  margin: 0 10px;
+  width: 1.5px;
+  background-color: rgba(255, 255, 255, 0.767);
+}
 
 .equipment {
   background: url(../../assets/hero/BGContent.png);
   width: 100%;
   min-height: 100px;
 }
+.equipment .title {
+  font-size: 2rem;
+}
 
-.about {
-  padding-top: 50px;
+.about .col-12:first-of-type {
+  order: 0;
+}
+@media screen and (min-width: 768px) {
+  .about .col-12:first-of-type {
+    order: -1;
+  }
+}
+.about .col-12:last-of-type {
+  order: -1;
+}
+@media screen and (min-width: 768px) {
+  .about .col-12:last-of-type {
+    order: 0;
+  }
 }
 
 .footer {
   min-height: 100px;
+}
+.footer .footer__brand {
+  text-decoration: none;
+  color: white;
+  font-size: 32px;
+  font-family: none;
 }
 .footer .info {
   text-decoration: none;
@@ -209,7 +295,7 @@ section {
   color: grey;
   font-family: sans-serif;
 }
-.footer .title {
+.footer .footer__title {
   color: #ffbb00;
   font-family: sans-serif;
 }
