@@ -43,7 +43,6 @@ body {
 img {
   width: 100%;
   height: 80%;
-  object-fit: cover;
   display: inline-block;
   @include respond(tab-por) {
     height: 90%;

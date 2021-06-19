@@ -1,5 +1,5 @@
 .header {
-  // height: 90px;
+  position: relative;
   background-color: transparent;
   nav {
     height: 7rem;
@@ -15,10 +15,11 @@
       display: none;
     }
     label[for="checkbox"] {
-      position: absolute;
+      position: fixed;
       right: 30px;
       top: 40px;
       cursor: pointer;
+      z-index: 100;
       .header__btn-item {
         top: 30px;
         width: 30px;
@@ -44,15 +45,23 @@
         transform: rotate(-45deg);
       }
     }
+    .menu__wrapper {
+      position: fixed;
+      top: 0;
+      left:0;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 90;
+    }
     ul {
-      display: none;
+      position: absolute;
+      left: -50%;
       list-style: none;
-      transform: translateX(-200vw);
       padding-left: 0;
       transition: 2s;
       @include respond(tab-por) {
         display: flex;
-        transform: translateX(0);
+        // transform: translateX(0);
       }
       li {
         margin: 10px;
@@ -60,12 +69,11 @@
     }
     .auth {
       display: none;
-      transform: translateX(-200vw);
-      transition: 2s;
-      @include respond(tab-por) {
-        display: flex;
-        transform: translateX(0);
-      }
+      // transform: translateX(-200vw);
+      // @include respond(tab-por) {
+      //   display: none;
+      //   // transform: translateX(0);
+      // }
       span {
         display: inline-block;
         img {
@@ -79,13 +87,20 @@
       font-family: sans-serif;
       font-size: 1.2rem;
     }
-    input[type="checkbox"]:checked + label + ul {
-      display: block;
-      transform: translateX(0);
+    input[type="checkbox"]:checked + label + .menu__wrapper ul {
+      left: 50%;
+      transform: translateX(-50%);
     }
-    input[type="checkbox"]:checked + label + ul + .auth {
-      display: block;
-      transform: translateX(0);
+    input[type="checkbox"]:checked + label + .menu__wrapper {
+      visibility: visible;
+      opacity: 1;
+      width: 100vw;
+      height: 100vh;
+      background: #000; 
     }
+    // input[type="checkbox"]:checked + label + ul + .auth {
+    //   display: block;
+    //   transform: translateX(0);
+    // }
   }
 }
