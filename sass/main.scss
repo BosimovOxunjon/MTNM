@@ -1,8 +1,10 @@
 @import "utils/verible";
 
-@import "utils/grid";
-
 @import "utils/mixins";
+
+@import "utils/media";
+
+@import "utils/grid";
 
 @import "layout/header";
 
@@ -14,6 +16,6 @@
 
 @import "layout/footer";
 
-@import "utils/utils";
+// @import "utils/media";
 
-@import "utils/media";
+@import "utils/utils";

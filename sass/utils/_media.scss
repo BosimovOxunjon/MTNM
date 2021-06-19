@@ -1,17 +1,17 @@
 @mixin respond($size) {
-  @if $size == mobile S {
+  @if $size == mobile-S {
     @media screen and (min-width: 320px) {
       @content;
     }
   }
 
-  @if $size == mobile M {
+  @if $size == mobile-M {
     @media screen and (min-width: 375px) {
       @content;
     }
   }
 
-  @if $size == mobile L {
+  @if $size == mobile-L {
     @media screen and (min-width: 425px) {
       @content;
     }
